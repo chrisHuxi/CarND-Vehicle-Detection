@@ -60,9 +60,9 @@ I tried various combinations of parameters and see what happend with the trianed
 | cell_per_block       		| 2 							| 
 | hog_channel       		| "ALL"							| 
 
-####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
+#### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+First I trained a linear SVM using sklearn, with 80% of data as training data and 20% as test data. As image feature I choose HOG feature, color histogram and also spatial feature. Then I got a result which achieve accuracy of 98.5%, but after try other type of SVM, I find SVC with `rbf` kernel can got 1% higher accuracy, but in this way there is a problem need noticing, it cost more time to train classifier and classify a image. Finally I choose the sencond way on my video, it cost 5 hours, but it indeed get a better result.
 
 ###Sliding Window Search
 
