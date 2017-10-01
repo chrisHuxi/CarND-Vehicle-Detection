@@ -12,13 +12,11 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./examples/car_not_car.png
-[image2]: ./examples/HOG_example.jpg
-[image3]: ./examples/sliding_windows.jpg
-[image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
-[image7]: ./examples/output_bboxes.png
+[image1]: ./writeup_img/car_notcar.png
+[image2]: ./writeup_img/hog_ch1.png
+[image3]: ./writeup_img/pipline.png
+[image4]: ./writeup_img/heat_label.png
+[image5]: ./writeup_img/res.png
 [video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -43,8 +41,7 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
-
+Here is an example: a image channel using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
 ![alt text][image2]
 
@@ -74,7 +71,7 @@ I use code in course's quiz code, it is very helpful. You can find it in 7th cod
 
 Ultimately I searched on 3 scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
 
-%%%图片￥￥￥￥￥￥￥￥￥￥￥
+![alt text][image3]
 
 As for optimizing the performance of classifier I explain in q3: I use SVC with `rbf` kernel and got 1% higher accuracy, but it really cost much more time.
 
@@ -94,7 +91,7 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ### Here is a test image and its corresponding heatmaps, output of `scipy.ndimage.measurements.label()` and the resulting bounding boxes:
 
-![alt text][image5]
+![alt text][image4]
 
 
 ---
